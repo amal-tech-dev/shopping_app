@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/view/home_screen/home_screen.dart';
+import 'package:shopping_app/view/main_screen/main_screen.dart';
 
 void main() {
   runApp(ShoppingApp());
@@ -13,7 +13,7 @@ class ShoppingApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: MainScreen(),
     );
   }
 }

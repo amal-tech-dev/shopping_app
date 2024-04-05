@@ -1,74 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_app/utils/color_constant.dart';
 import 'package:shopping_app/utils/image_constant.dart';
+import 'package:shopping_app/view/home_screen/home_screen_widgets/home_item.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: ColorConstant.tertiary,
-        leading: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: CircleAvatar(
-            backgroundColor: Colors.grey,
-          ),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: GridView(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 20,
+          childAspectRatio: 1.3,
         ),
-        actions: [
-          CircleAvatar(
-            radius: kToolbarHeight / 2 - 10,
-            backgroundColor: ColorConstant.tertiary,
-            foregroundImage: AssetImage(
-              ImageConstant.menu,
-            ),
+        children: [
+          HomeItem(
+            image: ImageConstant.customersPrimary,
+            name: 'Customers',
+            onPressed: () {},
           ),
-          SizedBox(
-            width: 10,
+          HomeItem(
+            image: ImageConstant.productsPrimary,
+            name: 'Products',
+            onPressed: () {},
           ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: ColorConstant.tertiary,
-        selectedItemColor: ColorConstant.primary,
-        unselectedItemColor: ColorConstant.primary,
-        showUnselectedLabels: true,
-        type: BottomNavigationBarType.fixed,
-        selectedLabelStyle: TextStyle(
-          color: ColorConstant.primary,
-          fontWeight: FontWeight.bold,
-        ),
-        items: [
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home_rounded),
-            icon: Icon(Icons.home_outlined),
-            label: 'Home',
+          HomeItem(
+            image: ImageConstant.newOrderPrimary,
+            name: 'New Order',
+            onPressed: () {},
           ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home_rounded),
-            icon: Icon(Icons.add),
-            label: 'New Order',
+          HomeItem(
+            image: ImageConstant.returnOrderPrimary,
+            name: 'Return Order',
+            onPressed: () {},
           ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.shopping_cart),
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Cart',
+          HomeItem(
+            image: ImageConstant.addPaymentPrimary,
+            name: 'Add Payment',
+            onPressed: () {},
           ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home_rounded),
-            icon: Icon(Icons.home_outlined),
-            label: 'Return Order',
+          HomeItem(
+            image: ImageConstant.todaysOrderPrimary,
+            name: 'Today\'s Order',
+            onPressed: () {},
           ),
-          BottomNavigationBarItem(
-            activeIcon: Icon(Icons.home_rounded),
-            icon: Icon(Icons.home_outlined),
-            label: 'Customers',
+          HomeItem(
+            image: ImageConstant.todaysSummaryPrimary,
+            name: 'Today\'s Summary',
+            onPressed: () {},
+          ),
+          HomeItem(
+            image: ImageConstant.routePrimary,
+            name: 'Route',
+            onPressed: () {},
           ),
         ],
       ),
